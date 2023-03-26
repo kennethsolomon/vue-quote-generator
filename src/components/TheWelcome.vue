@@ -4,11 +4,11 @@ import IconQuote from './icons/IconQuote.vue'
 </script>
 
 <template>
-  <WelcomeItem>
+  <WelcomeItem v-if="quote">
     <template #icon>
       <IconQuote class="cursor-pointer" @click="refreshQuote()" />
     </template>
-    <template #heading>Quote of the Day 💬</template>
+    <template #heading>Quote of the day 💬</template>
     <div v-if="quote">
       <p>{{ quote.split('—')[0] }}</p>
       <p>{{ '— ' + quote.split('—')[1] }}</p>
