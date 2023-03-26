@@ -5,7 +5,7 @@ import IconQuote from './icons/IconQuote.vue'
 
 <template>
   <WelcomeItem>
-    <template #icon>
+    <template v-if="quote" #icon>
       <IconQuote class="cursor-pointer" @click="refreshQuote()" />
     </template>
     <template #heading>Quote of the Day 💬</template>
@@ -17,7 +17,7 @@ import IconQuote from './icons/IconQuote.vue'
 <script>
 export default {
   data: () => ({
-    quote: 'Hello v2'
+    quote: ''
   }),
   methods: {
     refreshQuote() {
