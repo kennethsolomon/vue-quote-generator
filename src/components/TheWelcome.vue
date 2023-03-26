@@ -5,12 +5,14 @@ import IconQuote from './icons/IconQuote.vue'
 
 <template>
   <WelcomeItem>
-    <template v-if="quote" #icon>
+    <template #icon>
       <IconQuote class="cursor-pointer" @click="refreshQuote()" />
     </template>
     <template #heading>Quote of the Day 💬</template>
-    <p>{{ quote.split('—')[0] }}</p>
-    <p>{{ '— ' + quote.split('—')[1] }}</p>
+    <div v-if="quote">
+      <p>{{ quote.split('—')[0] }}</p>
+      <p>{{ '— ' + quote.split('—')[1] }}</p>
+    </div>
   </WelcomeItem>
 </template>
 
